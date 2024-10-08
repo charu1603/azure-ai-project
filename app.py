@@ -12,8 +12,7 @@ UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Azure Cognitive Services Configuration
-AZURE_OCR_ENDPOINT = 'https://nutritionapprg.cognitiveservices.azure.com//vision/v3.1/ocr'  # Replace with your Azure endpoint
-AZURE_SUBSCRIPTION_KEY = '7c3a0cc5715b48d89f1fed46bb61c587'  # Replace with your Azure subscription key
+ # Replace with your Azure subscription key
 
 
 @app.route('/', methods=['GET', 'POST'])
