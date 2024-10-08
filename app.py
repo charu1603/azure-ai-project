@@ -4,6 +4,11 @@ import requests
 import json
 import re
 from datetime import datetime
+from dotenv import load_dotenv
+load_dotenv()  # Load variables from .env
+
+AZURE_SUBSCRIPTION_KEY = os.getenv('AZURE_SUBSCRIPTION_KEY')
+AZURE_OCR_ENDPOINT = os.getenv('AZURE_OCR_ENDPOINT')
 
 app = Flask(__name__)
 
@@ -12,6 +17,7 @@ UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Azure Cognitive Services Configuration
+
  # Replace with your Azure subscription key
 
 
