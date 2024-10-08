@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutritional Report</title>
+    <style>
+        img {
+            max-width: 300px;
+            max-height: 300px;
+            display: none; /* Hidden until an image is selected */
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<style>
+  body{
+    margin: 0;
+    padding: 0;
+    background-color: #ECDFCC;
+  }
+  .container{
+   
+    display: flex;
+    flex-direction: column;
+justify-content: center;
+align-items: center;
+  }
+    .container h1{
+        text-align: center;
+    }
+.box{
+    display: flex;
+flex-direction: row;
+width: 80%;
+height: max-content;
+
+justify-content: center;
+align-items: center;
+}
+.img-container{
+    width: 50%;
+}
+.text-container{
+
+    width: 50%;
+}
+</style>
+<body>
+<div class="container">
+
+
+    <h1>Nutritional Report</h1>
+    <div class="box">
+    <div class="img-container">
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" id="imageInput" accept="image/*" required>
+        <input type="submit" value="Upload">
+    </form>
+
+    <!-- Image Preview -->
+    <img id="imagePreview" alt="Image Preview">
+</div>
+<div class="text-container">
+    {% if text %}
+    <h2>Extracted Text:</h2>
+    <p>{{ text }}</p>
+    <h2>Safety Check:</h2>
+    <p>{{ safety_message }}</p>
+    {% endif %}
+</div>
+</div>
+</div>
+    <!-- JavaScript to handle image preview -->
+    <script>
+        document.getElementById('imageInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.getElementById('imagePreview');
+                    img.src = e.target.result;
+                    img.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
