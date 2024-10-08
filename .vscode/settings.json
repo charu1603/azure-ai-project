@@ -1,4 +1,12 @@
 {
     "appService.defaultWebAppToDeploy": "undefined/subscriptions/40c35134-63da-408c-8538-29ed75626ea2/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/NutritionAppRG",
-    "appService.deploySubpath": "."
+    "appService.deploySubpath": ".",
+
+
+
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}",
+        ".env"
+    ]
 }

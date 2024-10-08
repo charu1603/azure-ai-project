@@ -1,3 +1,6 @@
 .env
-.venv
-myenv
+.venv/
+myenv/
+uploads/
+.vscode/
+__pycache__/
